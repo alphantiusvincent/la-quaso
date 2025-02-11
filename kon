@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UG1</title>
+</head>
+
+
+<body>
+    <h4><a href="#">Index</a></h4>
+    <hr>
+    <section>
+        <center>
+        <h1>
+            One Direction
+        </h1>
+       </center>
+        <nav>
+            <a href="#Index">Index</a> |
+            <a href="#Personil">personil</a>
+
+    <table>
+        <tr>
+            <td>"<ins>One Direction</ins> adalah boyband asal Inggris-Irlandia yang terbentuk pada tahun
+                2010 melalui ajang The X Factor UK. Grup ini terdiri dari Harry Styles, Niall Horan,
+                Liam Payne, Louis Tomlinson, dan Zayn Malik (yang keluar pada 2015). Dengan
+                lagu-lagu hits seperti What Makes You Beautiful, Story of My Life, dan Drag Me
+                Down, mereka berhasil meraih popularitas global dan berbagai penghargaan
+                musik."</td>
+            <td>
+
+                <video controls width="400">
+                    <source src="image\Trailer.mp4" type="video/mp4">
+                </video>
+            </td>
+            <td>Dikenal dengan harmoni vokal yang kuat dan lirik yang relatable, <ins>One Direction</ins>
+                memiliki basis penggemar yang sangat loyal (Directioners). Setelah hiatus pada
+                2016, masing-masing anggota menjalani karier solo yang sukses. Warisan musik
+                mereka tetap berpengaruh dalam industri pop hingga saat ini.</td>
+                
+
+            </tr>
+    </table>
+    <p>Daftar lagu one Direction:</p>
+    <ul>
+        <li>what makes you beautiful</li>
+        <li>Dtory of My Life</li>
+        <li>Drag Me Down </li>
+        <li>Night changes </li>
+    </ul>
+    
+    <table border="3">
+        <thead>
+            <th>No</th>
+            <th>Foto</th>   
+            <th>TanggalLahir</th>    
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan ="2" >1</td>
+                <td colspan="2">Liam Payne</td>
+            </tr>
+            <tr>
+                <td><img src="image\Liam.png" height="90"></td>
+                <td>29 Agustus 1993</td>
+
+            </tr>
+
+
+            <tr>
+                <td rowspan ="2" >1</td>
+                <td colspan="2">Niall Horam</td>
+            </tr>
+            <tr>
+                <td><img src="image\Niall.png" height="90"></td>
+                <td>13 September 1993</td>
+
+            </tr>
+
+
+
+            <tr>
+                <td rowspan ="2" >1</td>
+                <td colspan="2">Zayn Malik</td>
+            </tr>
+            <tr>
+                <td><img src="image\Zayn.png" height="90"></td>
+                <td>12 January 1993</td>
+
+            </tr>
+
+
+            <tr>
+                <td rowspan ="2" >1</td>
+                <td colspan="2">harry Styles</td>
+            </tr>
+            <tr>
+                <td><img src="image\Harry.png" height="90"></td>
+                <td>1 February 1993</td>
+
+            </tr>
+            
+
+            <tr>
+                <td rowspan ="2" >1</td>
+                <td colspan="2">Louis Tomlinson</td>
+            </tr>
+            <tr>
+                <td><img src="image\Louis.png" height="90"></td>
+                <td>24 Desember 1991</td>
+
+            </tr>
+            
+        </tbody>
+    
+    </table>
+    <hr>
+    <p><a href="https://en.wikipedia.org/wiki/One_Direction">Nama : Alphantius vincent
+        NIM : 71230967</a></p>
+
+</body>
+
+</html>

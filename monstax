@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doraemon</title>
+</head>
+
+<body>
+    <h4><a href="#">Index</a></h4>
+    <hr>
+    <section>
+        <h1 style="text-align: center">Doraemon</h1>
+        <table>
+            <tr>
+                <td>
+                    <video controls width="400">
+                        <source src="image\Trailer.mp4" type="video/mp4">
+                    </video>
+                </td>
+                <td>Film <del>Doraemon</del> merupakan adaptasi dari manga legendaris karya Fujiko F. Fujio
+                    yang telah menjadi ikon budaya pop sejak tahun 1970-an. Film-film <del>Doraemon</del>
+                    umumnya mengisahkan petualangan seru Nobita dan teman-temannya bersama
+                    <del>Doraemon</del>, robot kucing dari abad ke-22 yang memiliki berbagai alat canggih dari
+                    kantong ajaibnya. Dengan animasi yang khas, cerita yang penuh imajinasi, serta
+                    pesan moral tentang persahabatan, keberanian, dan tanggung jawab, film-film
+                    <del>Doraemon</del> selalu berhasil menarik perhatian penonton dari berbagai usia.
+                </td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <p>Tokoh - Tokoh kartun : </p>
+        <table border="1" cellspacing="0">
+            <tr>
+                <th>No</th>
+                <th>Foto</th>
+                <th>Kemunculan Pertama</th>
+            </tr>
+            <tr>
+                <td rowspan="2">1</td>
+                <td colspan="2">Doraemon</td>
+            </tr>
+            <tr>
+                <td><img src="image\Doraemon.png" height="100"></td>
+                <td>All The Way from the Country From The Future</td>
+            </tr>
+            <tr>
+                <td rowspan="2">2</td>
+                <td colspan="2">Nobi Nobita</td>
+            </tr>
+            <tr>
+                <td><img src="image\Nobita.png" height="100"></td>
+                <td>All The Way from the Country From The Future</td>
+            </tr>
+            <tr>
+                <td rowspan="2">3</td>
+                <td colspan="2">Shizuka Minamoto</td>
+            </tr>
+            <tr>
+                <td><img src="image\Shizuka.png" height="100"></td>
+                <td>All The Way from the Country From The Future</td>
+            </tr>
+            <tr>
+                <td rowspan="2">4</td>
+                <td colspan="2">Takeshi Gouda</td>
+            </tr>
+            <tr>
+                <td><img src="image\Takeshi.png" height="100"></td>
+                <td>All The Way from the Country From The Future</td>
+            </tr>
+            <tr>
+                <td rowspan="2">5</td>
+                <td colspan="2">Suneo Honekawa</td>
+            </tr>
+            <tr>
+                <td><img src="image\Suneo.png" height="100"></td>
+                <td>Operation : Secret SPY</td>
+            </tr>
+        </table>
+    </section>
+    <section>
+        <p>Serial Doraemon</p>
+        <ul>
+            <li>Stand By Me Doraemon</li>
+            <li>Doraemon : Nobita's Little Star Wars</li>
+            <li>Doraemon : Nobita's Treasure Island</li>
+            <li>Doraemon : Nobita and The Birth Of Japan</li>
+        </ul>
+    </section>
+    <hr>
+    <p><a href="https://id.wikipedia.org/wiki/Doraemon">Nama : Jonathan Satriani Gracio Andrianto, NIM : 71230978</a></p>
+</body>
+
+</html>

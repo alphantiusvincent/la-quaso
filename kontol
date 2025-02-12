@@ -1,0 +1,31 @@
+public static void main(String[] args) {
+
+}
+
+Lampu lampudepan new Lampu();
+
+lampudepan.nyala();
+
+lampudepan.gantiWarna (gantinya: "merah");
+
+System.out.println("Warna sekarang: "+lampudepan.warnaSekarang());
+
+Lampudepan.gantiWarna (gantinya: "hijau");
+
+System.out.println("Warna sekarang: "+lampudepan.warnaSekarang());
+
+lampudepan.mati();
+
+Lampu lamputaman = new Lampu();
+
+lamputaman.nyala();
+
+lamputaman.gantiWarna (gantinya: "putih");
+
+System.out.println("Warna sekarang: "+lamputaman.warnaSekarang());
+
+lamputaman.gantiWarna (gantinya: "kuning");
+
+System.out.println("Warna sekarang: "+lamputaman.warnaSekarang());
+
+lamputaman.mati();

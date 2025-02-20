@@ -1,0 +1,102 @@
+package org.example.coba;
+
+public class Petinju {
+    private String nama;
+    private int stamina;
+    private int kekuatan;
+
+    // Konstruktor
+    public Petinju(String namaStamina, int kekuatan) {
+        // Memisahkan nama dan stamina
+        int lastIndex = namaStamina.length();
+        while (lastIndex > 0 && Character.isDigit(namaStamina.charAt(lastIndex - 1))) {
+            lastIndex--;
+        }
+        this.nama = namaStamina.substring(0, lastIndex);
+        this.stamina = Integer.parseInt(namaStamina.substring(lastIndex));
+        this.kekuatan = kekuatan;
+    }
+
+    // Getter
+    public String getNama() {
+        return nama;
+    }
+
+    public int getStamina() {
+        return stamina;
+    }
+
+    public int getKekuatan() {
+        return kekuatan;
+    }
+
+    // Setter
+    public void setStamina(int stamina) {
+        this.stamina = stamina;
+    }
+
+    public void tinju(Samsak samsak) {
+        if (stamina < kekuatan) {
+            System.out.println("Stamina petinju " + nama + " sudah habis!");
+            return;
+        }
+
+        if (kekuatan > samsak.getTingkatKerusakan()) {
+            int damage = kekuatan;
+            samsak.setDayaTahan(samsak.getDayaTahan() - damage);
+            stamina -= kekuatan;
+
+            System.out.println("Daya tahan samsak berkurang : " + damage);
+            System.out.println("Stamina petinju " + nama + " tersisa : " + stamina);
+            System.out.println("Daya tahan samsak tersisa : " + samsak.getDayaTahan());
+
+            if (samsak.getDayaTahan() <= 0) {
+                samsak.setRusak(true);
+                System.out.println("Samsak Hancur!");
+            }
+        } else {
+            System.out.println("Samsak terlalu keras bagi " + nama + " sang petinju!");
+        }
+    }
+}
+
+
+
+
+
+package org.example.coba;
+
+public class Samsak {
+    private int dayaTahan;
+    private int tingkatKerusakan;
+    private boolean rusak;
+
+    // Konstruktor
+    public Samsak(int dayaTahan, int tingkatKerusakan) {
+        this.dayaTahan = dayaTahan;
+        this.tingkatKerusakan = tingkatKerusakan;
+        this.rusak = false;
+    }
+
+    // Getter
+    public int getDayaTahan() {
+        return dayaTahan;
+    }
+
+    public int getTingkatKerusakan() {
+        return tingkatKerusakan;
+    }
+
+    public boolean isRusak() {
+        return rusak;
+    }
+
+    // Setter
+    public void setDayaTahan(int dayaTahan) {
+        this.dayaTahan = dayaTahan;
+    }
+
+    public void setRusak(boolean rusak) {
+        this.rusak = rusak;
+    }
+}

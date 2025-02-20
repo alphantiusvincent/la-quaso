@@ -1,0 +1,49 @@
+package org.example.coba;
+
+public class Petinju {
+    private String nama;
+    private int stamina;
+
+    // Konstruktor
+    public Petinju(String name, int stamina) {
+        this.nama = name + stamina;
+        this.stamina = stamina;
+    }
+
+    // Getter dan Setter
+    public String getNama() {
+        return nama;
+    }
+
+    public int getStamina() {
+        return stamina;
+    }
+
+    public void setStamina(int stamina) {
+        this.stamina = stamina;
+    }
+
+
+    public void tinju(Samsak samsak, int kekuatan) {
+        if (stamina < kekuatan) {
+            System.out.println("Stamina tidak cukup untuk meninju.");
+            return;
+        }
+
+        if (kekuatan > samsak.getTingkatKerusakan()) {
+            int damage = kekuatan - samsak.getTingkatKerusakan();
+            samsak.setDayaTahan(samsak.getDayaTahan() - damage);
+            stamina -= kekuatan;
+
+            System.out.println("Pukulan berhasil! Daya tahan samsak tersisa: " + samsak.getDayaTahan());
+            System.out.println("Stamina petinju " + this.getNama() + " tersisa: " + stamina);
+
+            if (samsak.getDayaTahan() <= 0) {
+                samsak.setRusak(true);
+                System.out.println("Samsak Hancur!");
+            }
+        } else {
+            System.out.println("Samsak terlalu keras bagi " + this.getNama() + "!");
+        }
+    }
+}

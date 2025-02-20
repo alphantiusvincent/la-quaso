@@ -1,0 +1,56 @@
+package org.example.coba;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        boolean pukulTerus = false;
+        Scanner scanner = new Scanner(System.in);
+
+        // Input nama dan atribut
+        System.out.print("Masukan nama petinju : ");
+        String name = scanner.nextLine();
+        System.out.print("Masukan kekuatan petinju : ");
+        int kekuatan = Integer.parseInt(scanner.nextLine());
+        System.out.print("Daya tahan samsak : ");
+        int dayaTahan = Integer.parseInt(scanner.nextLine());
+        System.out.print("Tingkat Kekerasan samsak : ");
+        int tingkatKekerasan = Integer.parseInt(scanner.nextLine());
+
+        // Membuat objek petinju dan samsak
+        Petinju petinju1 = new Petinju(name, kekuatan);
+        Samsak samsak1 = new Samsak(dayaTahan, tingkatKekerasan);
+
+        // Mulai pukulan pertama
+        System.out.print("Pukul samsak?(y/n) : ");
+        String pukul = scanner.nextLine();
+
+        if (pukul.equals("y")) {
+            pukulTerus = true;
+        } else if (pukul.equals("n")) {
+            pukulTerus = false;
+        }
+
+        while (pukulTerus) {
+            if (samsak1.isRusak()) {
+                break;
+            }
+
+            // Cek stamina sebelum meninju
+            if (petinju1.getStamina() < petinju1.getKekuatan()) {
+                System.out.println("Stamina petinju " + petinju1.getNama() + " sudah habis!");
+                break;
+            }
+
+            pukulTerus = petinju1.tinju(samsak1);
+
+            // Jika samsak masih ada, tanya lagi
+            if (pukulTerus) {
+                System.out.print("Pukul samsak?(y/n) : ");
+                String pukulLagi = scanner.nextLine();
+                if (pukulLagi.equals("n")) {
+                    pukulTerus = false;
+                }
+            }
+        }
+    }
+}

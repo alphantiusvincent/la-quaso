@@ -1,0 +1,39 @@
+package org.ukdw.managers;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class RuanganManager {
+    private Connection connection;
+
+    // Constructor
+    public RuanganManager(Connection connection) {
+        this.connection = connection;
+    }
+
+    // Add room method
+    public boolean addRuangan(String name, int buildingId) {
+        String sql = "INSERT INTO ruangan (name, gedung_id) VALUES (?, ?)";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, name);
+            preparedStatement.setInt(2, buildingId);
+            return preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.err.println("Error occurred while adding room: " + e.getMessage());
+            return false;
+        }
+    }
+
+    // Delete room method
+    public boolean deleteRuangan(int id) {
+        String sql = "DELETE FROM ruangan WHERE id = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, id);
+            return preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            System.err.println("Error occurred while deleting room: " + e.getMessage());
+            return false;
+        }
+    }
+}

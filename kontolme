@@ -1,0 +1,118 @@
+package org.ukdw.data;
+
+public class Ruangan {
+    private int idRuangan;
+    private String namaRuangan;
+    private int idGedung;
+
+    public Ruangan(int idRuangan, String namaRuangan, int idGedung) {
+        try {
+            this.idRuangan = idRuangan;
+            this.namaRuangan = namaRuangan;
+            this.idGedung = idGedung;
+        } catch (Exception e) {
+            System.out.println("Terjadi kesalahan saat menginisialisasi Ruangan: " + e.getMessage());
+        }
+    }
+
+    public int getIdRuangan() {
+        return idRuangan;
+    }
+
+    public void setIdRuangan(int idRuangan) {
+        try {
+            this.idRuangan = idRuangan;
+        } catch (Exception e) {
+            System.out.println("Kesalahan saat mengatur ID Ruangan: " + e.getMessage());
+        }
+    }
+
+    public String getNamaRuangan() {
+        return namaRuangan;
+    }
+
+    public void setNamaRuangan(String namaRuangan) {
+        try {
+            this.namaRuangan = namaRuangan;
+        } catch (Exception e) {
+            System.out.println("Kesalahan saat mengatur Nama Ruangan: " + e.getMessage());
+        }
+    }
+
+    public int getIdGedung() {
+        return idGedung;
+    }
+
+    public void setIdGedung(int idGedung) {
+        try {
+            this.idGedung = idGedung;
+        } catch (Exception e) {
+            System.out.println("Kesalahan saat mengatur ID Gedung: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public String toString() {
+        try {
+            return "Ruangan { ID: " + idRuangan + ", Nama: '" + namaRuangan + "', Gedung ID: " + idGedung + " }";
+        } catch (Exception e) {
+            return "Kesalahan dalam menampilkan informasi ruangan: " + e.getMessage();
+        }
+    }
+}
+
+
+
+
+
+
+package org.ukdw.managers;
+
+import org.ukdw.data.Ruangan;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class RuanganManager {
+    private List<Ruangan> daftarRuangan;
+
+    // Constructor
+    public RuanganManager() {
+        this.daftarRuangan = new ArrayList<>();
+    }
+
+    // Add room method
+    public boolean addRuangan(int id, String name, int gedungId) {
+        try {
+            Ruangan ruanganBaru = new Ruangan(id, name, gedungId);
+            daftarRuangan.add(ruanganBaru);
+            return true;
+        } catch (Exception e) {
+            System.err.println("Terjadi kesalahan saat menambahkan ruangan: " + e.getMessage());
+            return false;
+        }
+    }
+
+    // Delete room method
+    public boolean deleteRuangan(int id) {
+        try {
+            Iterator<Ruangan> iterator = daftarRuangan.iterator();
+            while (iterator.hasNext()) {
+                Ruangan ruangan = iterator.next();
+                if (ruangan.getId() == id) {
+                    iterator.remove();
+                    return true;
+                }
+            }
+            return false;
+        } catch (Exception e) {
+            System.err.println("Terjadi kesalahan saat menghapus ruangan: " + e.getMessage());
+            return false;
+        }
+    }
+
+    // Get all rooms
+    public List<Ruangan> getAllRuangan() {
+        return new ArrayList<>(daftarRuangan);
+    }
+}

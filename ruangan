@@ -1,0 +1,46 @@
+package org.ukdw.data;
+
+public class Ruangan {
+    private int id;
+    private String name;
+    private int gedungId;
+
+    public Ruangan(int id, String name, int gedungId) {
+        this.id = id;
+        this.name = name;
+        this.gedungId = gedungId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getGedungId() {
+        return gedungId;
+    }
+
+    public void setGedungId(int gedungId) {
+        this.gedungId = gedungId;
+    }
+
+    @Override
+    public String toString() {
+        return "Ruangan{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", gedungId=" + gedungId +
+                '}';
+    }
+}

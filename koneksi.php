@@ -1,12 +1,13 @@
 <?php
-// isi disini
+// koneksi.php: koneksi ke database MySQL
 $host = "localhost";
-$username = "root";
-$password = "";
-$database = "transaksi";
+$user = "root";       // sesuaikan dengan user db Anda
+$password = "";       // sesuaikan dengan password db Anda
+$database = "php_4";  // sesuaikan dengan nama database Anda (sesuai soal)
 
-$koneksi = mysqli_connect($host, $username, $password, $database);
-if (!$koneksi) {
-    die("Koneksi gagal: " . mysqli_connect_error());
+$conn = new mysqli($host, $user, $password, $database);
+
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
 }
 ?>

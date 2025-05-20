@@ -1,0 +1,59 @@
+const workshopSelect = document.getElementById('Workshop');
+const pembicaraSelect = document.getElementById('Pembicara');
+const errorMessage = document.getElementById('error-message');
+const form = document.getElementById('workshopForm');
+const summaryName = document.getElementById('summaryName');
+const summaryEmail = document.getElementById('summaryEmail');
+const summaryPhone = document.getElementById('summaryPhone');
+const summaryWorkshop = document.getElementById('summaryWorkshop');
+const summarySpeaker = document.getElementById('summarySpeaker');
+
+const speakerJS = ['Matahari Bhakti Nendya, S.Kom., M.T', 'Agata Filiana, S.Kom., M.Sc.'];
+const speakerReact = ['Lukas Chrisantyo A A., S.Kom., M.Eng', 'I Kadek Dendy Senapartha. S. T., M. Eng.'];
+
+function updatePembicaraOptions() {
+    const selectedWorkshop = workshopSelect.value;
+
+    pembicaraSelect.innerHTML = '<option value="">Select</option>';
+
+    if (selectedWorkshop === 'JavaScript Dasar') {
+        speakerJS.forEach(speaker => {
+            const option = document.createElement('option');
+            option.value = speaker;
+            option.textContent = speaker;
+            pembicaraSelect.appendChild(option);
+        });
+    } else if (selectedWorkshop === 'React JS') {
+        speakerReact.forEach(speaker => {
+            const option = document.createElement('option');
+            option.value = speaker;
+            option.textContent = speaker;
+            pembicaraSelect.appendChild(option);
+        });
+    } else if (selectedWorkshop === 'Smart Contract') {
+        errorMessage.textContent = 'Maaf, Belum ada pembicara untuk workshop ini';
+    } else {
+        errorMessage.textContent = '';
+    }
+}
+
+workshopSelect.addEventListener('change', updatePembicaraOptions);
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const workshop = workshopSelect.value;
+    const pembicara = pembicaraSelect.value;
+
+    summaryName.textContent = name;
+    summaryEmail.textContent = email;
+    summaryPhone.textContent = phone;
+    summaryWorkshop.textContent = workshop;
+    summarySpeaker.textContent = pembicara;
+
+    form.reset();
+    errorMessage.textContent = '';
+});
